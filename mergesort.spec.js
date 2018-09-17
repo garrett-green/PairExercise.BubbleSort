@@ -55,11 +55,17 @@ describe("Merge Sort", function() {
     });
 
     describe("split function", function() {
-        it("takes a single array and returns two", function() {
+        it("takes a single array with an even number of elements and returns two", function() {
             let arr1 = [1, 2, 3, 4];
-            let a, b = Sorting.split(arr1);
+            [a, b] = Sorting.split(arr1);
             expect(a).toEqual([1, 2]);
             expect(b).toEqual([3, 4]);
+        });
+        it("takes a single array with an odd number of elements and returns two", function() {
+            let arr1 = [1, 2, 3, 4, 5];
+            [a, b] = Sorting.split(arr1);
+            expect(a).toEqual([1, 2]);
+            expect(b).toEqual([3, 4, 5]);
         });
     });
 });

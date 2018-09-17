@@ -47,8 +47,9 @@ describe("Merge Sort", function() {
 
     describe("merge function", function() {
         it("takes two arrays and returns a single array", function() {
-            let arr1 = [1, 2];
-            let arr2 = [3, 4];
+            let arr1 = [3, 4];
+            let arr2 = [1, 2];
+            // debugger
             Sorting.merge(arr1, arr2);
             expect(arr).toEqual([1, 2, 3, 4]);
         });

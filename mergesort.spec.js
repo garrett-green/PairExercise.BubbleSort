@@ -38,7 +38,6 @@ describe("Merge Sort", function() {
 
         it("returns sorted array correctly; 5 items", function() {
           let arr = [3, 100, 2, 45, 1];
-          // spyOn(arr, 'sort').and.callThrough();
           Sorting.mergeSort(arr);
           expect(arr).toEqual([1, 2, 3, 45, 100]);
       });
@@ -46,12 +45,20 @@ describe("Merge Sort", function() {
     });
 
     describe("merge function", function() {
-        it("takes two arrays and returns a single array", function() {
+        it("takes two arrays with an even number of elements and returns a single array in order", function() {
             let arr1 = [3, 4];
             let arr2 = [1, 2];
-            // debugger
-            Sorting.merge(arr1, arr2);
-            expect(arr).toEqual([1, 2, 3, 4]);
+            expect(Sorting.merge(arr1, arr2)).toEqual([1, 2, 3, 4]);
+        });
+        it("takes two arrays with an odd number of elements and returns a single array in order", function() {
+            let arr1 = [3, 4, 5];
+            let arr2 = [1, 2];
+            expect(Sorting.merge(arr1, arr2)).toEqual([1, 2, 3, 4, 5]);
+        });
+        it("takes two different arrays with an odd number of elements and returns a single array in order", function() {
+            let arr3 = [1];
+            let arr4 = [4, 5];
+            expect(Sorting.merge(arr4, arr3)).toEqual([1, 4, 5]);
         });
     });
 

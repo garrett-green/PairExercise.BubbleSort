@@ -18,14 +18,13 @@ Sorting.merge = function(array1, array2)  {
                 mergedArray.push(array1.shift())
             }
         }
-
-    
-    console.log('mergedArray', mergedArray);
-    
-    return mergedArray
-    
+    return mergedArray;
 }
 
-Sorting.mergeSort = function()  {
+Sorting.mergeSort = function(array)  {
+  if(array.length < 2)  {
+    return array;
+  } else  {
 
+  }
 }

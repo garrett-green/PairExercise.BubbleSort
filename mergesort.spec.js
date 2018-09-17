@@ -10,37 +10,35 @@ describe("Merge Sort", function() {
         });
 
         it("handles multiple items in an array", function() {
-            debugger
+            // debugger
             expect([50, 42].length).toEqual(2);
             expect(Sorting.mergeSort([50, 42])).toEqual([42, 50]);
         });
 
-        xit("doesnt use built-in sort method", function() {
-            let arr = [1, 3, 2];
-            // debugger;
-            spyOn(arr, "sort").and.callThrough();
-            Sorting.mergeSort(arr);
-            expect(arr.sort.calls.count()).toEqual(0);
-        });
+        // it("doesnt use built-in sort method", function() {
+        //     let arr = [1, 3, 2];
+        //     // debugger;
+        //     spyOn(arr, "sort").and.callThrough();
+        //     Sorting.mergeSort(arr);
+        //     expect(arr.sort.calls.count()).toEqual(0);
+        // });
 
-        xit("returns sorted array correctly; 2 items", function() {
+        it("returns sorted array correctly; 2 items", function() {
             let arr = [100, 5];
             // spyOn(arr, 'sort').and.callThrough();
-            Sorting.mergeSort(arr);
-            expect(arr).toEqual([5, 100]);
+            expect(Sorting.mergeSort(arr)).toEqual([5, 100]);
         });
 
-        xit("returns sorted array correctly; 3 items", function() {
+        it("returns sorted array correctly; 3 items", function() {
             let arr = [3, 2, 1];
             // spyOn(arr, 'sort').and.callThrough();
-            Sorting.mergeSort(arr);
-            expect(arr).toEqual([1, 2, 3]);
+            expect(Sorting.mergeSort(arr)).toEqual([1, 2, 3]);
         });
 
-        xit("returns sorted array correctly; 5 items", function() {
-          let arr = [3, 100, 2, 45, 1];
-          Sorting.mergeSort(arr);
-          expect(arr).toEqual([1, 2, 3, 45, 100]);
+        it("returns sorted array correctly; 5 items", function() {
+            // debugger;
+          let arr = [3, 10, 2, 45, 1];
+          expect(Sorting.mergeSort(arr)).toEqual([1, 2, 3, 10, 45]);
       });
 
     });

@@ -12,11 +12,15 @@ Sorting.split = function(a)  {
 
 Sorting.merge = function(array1, array2)  {
     let mergedArray = []
-    while(array1.length || array2.length) {
-        if(array1[0] > array2[0]) {
-                mergedArray.push(array2.shift())
+    let indexL = 0;
+    let indexR = 0;
+    while(mergedArray.length <= (array1.length + array2.length)) {
+        if(array1[indexL] > array2[indexR]) {
+                mergedArray.push(array2[indexR]);
+                indexR++;
             } else {
-                mergedArray.push(array1.shift())
+                mergedArray.push(array1[indexL]);
+                indexL++;
             }
         }
     return mergedArray;
@@ -27,6 +31,8 @@ Sorting.mergeSort = function(array)  {
     return array;
   } else  {
     let [a, b] = this.split(array)
+    // Sorting.mergeSort(a)
+    // Sorting.mergeSort(b)
     return Sorting.merge(Sorting.mergeSort(a), Sorting.mergeSort(b))
   }
 }

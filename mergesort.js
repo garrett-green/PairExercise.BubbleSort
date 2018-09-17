@@ -1,6 +1,7 @@
 // const Sorting = {};
 
 Sorting.split = function(a)  {
+  if(a.length === 1) return a
   let midPoint = Math.floor(a.length / 2);
 
   let arrayA = a.slice(0, midPoint);
@@ -25,7 +26,7 @@ Sorting.mergeSort = function(array)  {
   if(array.length < 2)  {
     return array;
   } else  {
-    let [a,b] = this.split(array)
-    // return this.merge([this.mergeSort(a)], [this.mergeSort(b)])
+    let [a, b] = this.split(array)
+    return Sorting.merge(Sorting.mergeSort(a), Sorting.mergeSort(b))
   }
 }

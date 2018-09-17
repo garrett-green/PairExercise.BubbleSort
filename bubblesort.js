@@ -15,6 +15,16 @@ Sorting.bubbleSort = function(array) {
   } else if(array.length === 0 || array.length === 1)  {
     return array;
   } else  {
-  return array;
+    for(let endIndex=array.length-1; endIndex > 0 ;endIndex--) {
+        console.log('endIndex', endIndex)
+        for(let currentIndex=0; currentIndex<endIndex ;currentIndex++) {
+            console.log('currentIndex', currentIndex)
+            // check if the current element is greater than the next element
+            if(array[currentIndex] > array[currentIndex+1]) {
+                Sorting.swap(currentIndex, currentIndex+1, array)
+            }
+        }
+    }
+    return array
   }
 }

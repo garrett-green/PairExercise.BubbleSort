@@ -33,6 +33,12 @@ describe('Bubble Sort', function(){
     expect( arr.sort().calls.count() ).toEqual( 0 );
   });
 
+  it('swap function correctly changes number positions', function(){
+    let arr = [1,3]
+    Sorting.swap(0, 1, arr)
+    expect( arr ).toEqual( [3, 1] );
+  });
+
   it('uses swap function', function(){
     let arr = [42, 50];
     spyOn(Sorting, 'swap').and.callThrough();

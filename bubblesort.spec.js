@@ -40,6 +40,13 @@ describe("Bubble Sort", function() {
             Sorting.bubbleSort(arr);
             expect(arr).toEqual([1, 2, 3]);
         });
+
+        it("returns sorted array correctly; 5 items", function() {
+          let arr = [3, 100, 2, 45, 1];
+          // spyOn(arr, 'sort').and.callThrough();
+          Sorting.bubbleSort(arr);
+          expect(arr).toEqual([1, 2, 3, 45, 100]);
+      });
     });
 
     describe("swap function", function() {

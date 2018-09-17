@@ -10,6 +10,7 @@ describe("Merge Sort", function() {
         });
 
         it("handles multiple items in an array", function() {
+            // debugger
             expect([42, 50].length).toEqual(2);
             expect(Sorting.mergeSort([42, 50])).toEqual([42, 50]);
         });

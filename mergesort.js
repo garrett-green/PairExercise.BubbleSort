@@ -25,6 +25,7 @@ Sorting.mergeSort = function(array)  {
   if(array.length < 2)  {
     return array;
   } else  {
-
+    let [a,b] = this.split(array)
+    // return this.merge([this.mergeSort(a)], [this.mergeSort(b)])
   }
 }

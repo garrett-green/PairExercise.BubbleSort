@@ -23,16 +23,25 @@ describe('Bubble Sort', function(){
   });
 
   it('doesnt use built-in builtin sort method', function(){
-    expect( Sorting.bubbleSort([]) ).toEqual( [] );
-  });
-
-  it('returns sorted array correctly', function(){
-    let arr = [42, 50];
-    spyOn(arr, 'sort').and.callThrough();
-    Sorting.bubbleSort(arr);
     expect( arr.sort().calls.count() ).toEqual( 0 );
   });
 
+  it('returns sorted array correctly; 2 items', function(){
+    let arr = [100, 5];
+    spyOn(arr, 'sort').and.callThrough();
+    Sorting.bubbleSort(arr);
+    expect( arr ).toEqual( [5, 100] );
+  });
+
+
+
+  it('returns sorted array correctly; 3 items', function(){
+    let arr = [3, 2, 1];
+    spyOn(arr, 'sort').and.callThrough();
+    Sorting.bubbleSort(arr);
+    expect( arr ).toEqual( [1, 2, 3 ] );
+  });
+  
   it('swap function correctly changes number positions', function(){
     let arr = [1,3]
     Sorting.swap(0, 1, arr)

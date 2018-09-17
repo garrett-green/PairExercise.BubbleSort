@@ -36,7 +36,6 @@ describe("Merge Sort", function() {
         });
 
         it("returns sorted array correctly; 5 items", function() {
-            // debugger;
           let arr = [3, 10, 2, 45, 1];
           expect(Sorting.mergeSort(arr)).toEqual([1, 2, 3, 10, 45]);
       });
